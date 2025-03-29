@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+html {
+    font-family: Poppins, Segoe UI, Tahoma, sans-serif;
+    font-size: 18px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: whitesmoke;
+}
+
+nav {
+    height: 60px;
+    width: auto;
+    background-color: #1f1e1e;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.sidebar{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+nav a{
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    color: whitesmoke;
+
+}
+
+nav a:hover{
+    color: #333;
+    background-color: #858585; 
+
+}
+nav svg{
+    fill: whitesmoke
+}
+
+#sidebar-status{
+    display:none;
+}
+
+.openSidebarButton:hover, .closeSidebarButton:hover{
+    background-color:#858585;
+}
+
+.openSidebarButton, .closeSidebarButton{
+    margin: 20px;
+    display: none;
+}
+
+
+
+
+
+
+@media(max-width:500px){
+    .sidebar{
+        flex-direction:column;
+        align-items: flex-start;
+        
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 300px;
+
+        background-color: #1f1e1e;
+        box-shadow: -5px 0 5px rgba(48, 48, 48, 0.25);
+        transition: 0.5s ease-out;
+    }
+    .Homelink{
+        display: none;
+    }
+    nav a{
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+        justify-content: flex-start;
+    }
+    .openSidebarButton, .closeSidebarButton{
+        display: block;
+    }
+    #sidebar-status:checked ~ .sidebar{
+        right: 0;
+    }
+    #sidebar-status:checked ~ #overlay{
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    } 
+}
